@@ -10,6 +10,7 @@ import { PhoneEmulatorPanel } from "./components/PhoneEmulatorPanel";
 import { BottomConsolePanel } from "./components/BottomConsolePanel";
 import { BackgroundGlassGlow } from "./components/BackgroundGlassGlow";
 import { FullWebsiteView } from "./components/FullWebsiteView";
+import { InteractiveTourModal } from "./components/InteractiveTourModal";
 
 export default function App() {
   // View mode state: "ide" | "web"
@@ -20,6 +21,9 @@ export default function App() {
 
   // Liquid Glass state
   const [glassEnabled, setGlassEnabled] = useState(true);
+
+  // Guided Tour state
+  const [isTourOpen, setIsTourOpen] = useState(false);
 
   // File Tabs state (landing Portfolio.kt is default tab #1!)
   const [openTabIds, setOpenTabIds] = useState(["landing", "about-me", "proj-dispenser", "contact"]);
@@ -119,6 +123,15 @@ export default function App() {
       {/* Background Liquid Glass Ambient Glows */}
       {glassEnabled && <BackgroundGlassGlow />}
 
+      {/* Guided Tour Modal */}
+      <InteractiveTourModal
+        isOpen={isTourOpen}
+        onClose={() => setIsTourOpen(false)}
+        onSwitchViewMode={(mode) => setViewMode(mode)}
+        onOpenEmulator={handleLaunchInEmulator}
+        onSelectFile={handleSelectFile}
+      />
+
       {/* Top Android Studio Titlebar / Navbar */}
       <TopNavbar
         activeFileName={activeFile ? activeFile.name : ""}
@@ -135,6 +148,7 @@ export default function App() {
         onToggleConsole={() => setIsConsoleOpen(!isConsoleOpen)}
         viewMode={viewMode}
         onToggleViewMode={() => setViewMode(viewMode === "ide" ? "web" : "ide")}
+        onOpenTour={() => setIsTourOpen(true)}
       />
 
       {/* RENDER MODE SWITCH: Full Standalone Website Mode vs Android Studio IDE Mode */}
