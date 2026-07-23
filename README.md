@@ -1,146 +1,138 @@
 <div align="center">
 
-  <!-- Android & Kotlin Hero Header Banner -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Header Banner" />
-
-  <br><br>
-
-  <h1>🤖 Hi 👋, I'm Shubham Sharma</h1>
-  <h3>Android Developer • AI/ML Developer • IoT Specialist</h3>
-  <p><b>Surat, Gujarat, India • 2+ Years Production Experience</b></p>
-
-  <p align="center">
-    <a href="https://sharmashubham07.github.io/Portfolio/" target="_blank">
-      <img src="https://img.shields.io/badge/Live_Portfolio-3DDC84?style=for-the-badge&logo=android&logoColor=000000" alt="Live Portfolio" />
-    </a>
-    <a href="https://www.linkedin.com/in/shubham-sharma-55b5821b9/" target="_blank">
-      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-    </a>
-    <a href="https://github.com/SharmaShubham07" target="_blank">
-      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-    </a>
-    <a href="https://wa.me/917889843353" target="_blank">
-      <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-    </a>
-    <a href="mailto:ss7773550@gmail.com">
-      <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-    </a>
-  </p>
+  <!-- Typing Effect Banner -->
+  <a href="https://sharmashubham07.github.io/Portfolio/">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=28&pause=1000&color=3DDC84&center=true&vCenter=true&width=750&height=70&lines=Hi+%F0%9F%90%9B+I'm+Shubham+Sharma;Android+Developer+%7C+AI%2FML+%7C+IoT+Specialist;2%2B+Years+Exp+%E2%80%A2+Surat%2C+Gujarat%2C+India;Building+Next-Gen+Kotlin+%2B+IoT+%2B+AI+Apps" alt="Typing SVG" />
+  </a>
 
   <br>
 
-</div>
+  <!-- Animated Wave Line -->
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Header Divider" />
 
----
+  <br><br>
 
-### 📱 **About Me**
+  <!-- Glowing Action Badges -->
+  <p align="center">
+    <a href="https://sharmashubham07.github.io/Portfolio/" target="_blank">
+      <img src="https://img.shields.io/badge/🚀_LIVE_PORTFOLIO-3DDC84?style=for-the-badge&logo=android&logoColor=000000" alt="Live Portfolio" />
+    </a>
+    <a href="https://www.linkedin.com/in/shubham-sharma-55b5821b9/" target="_blank">
+      <img src="https://img.shields.io/badge/LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/SharmaShubham07" target="_blank">
+      <img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    </a>
+    <a href="https://wa.me/917889843353" target="_blank">
+      <img src="https://img.shields.io/badge/WHATSAPP-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+    </a>
+    <a href="mailto:ss7773550@gmail.com">
+      <img src="https://img.shields.io/badge/EMAIL_ME-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    </a>
+  </p>
 
-<img align="right" width="220" alt="Android Dev Sticker" src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" />
-
-- 🤖 **Native Android Specialist**: 2+ years of experience engineering high-performance native Android applications in **Kotlin** and **Java**.
-- 📡 **IoT & Hardware Integration**: Expert in real-time hardware telemetry (**MQTT QoS 1**), **USB OTG Serial drivers (FTDI/UART)**, and **OTA Firmware Bootloader Flashing**.
-- 🧠 **AI/ML Integrations**: Skilled in on-device computer vision (**Google ML Kit**) and cloud generative AI APIs (**Gemini API**, **Nvidia Generative AI**).
-- ⚙️ **Performance & Architecture**: Strong foundation in **Clean Architecture**, **MVVM**, **Coroutines & Flow**, **Jetpack Compose**, and **Room DB** offline sync buffers.
-- ⚡ **Proven Impact**: Reduced application processing latency by **30%** and authored reusable enterprise Kotlin libraries used across multiple commercial IoT projects.
-
-<br>
-
----
-
-### 🛠️ **Tech Stack & Engineering Arsenal**
-
-#### 🤖 **Android & Core Languages**
-<p align="left">
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=000000" alt="Android Studio" />
-  <img src="https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpack-compose&logoColor=white" alt="Jetpack Compose" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
-</p>
-
-#### 📡 **IoT Telemetry & Hardware Integration**
-<p align="left">
-  <img src="https://img.shields.io/badge/MQTT_QoS_1-660066?style=for-the-badge&logo=mqtt&logoColor=white" alt="MQTT" />
-  <img src="https://img.shields.io/badge/USB_OTG_Serial-FF6F00?style=for-the-badge&logo=usb&logoColor=white" alt="USB OTG" />
-  <img src="https://img.shields.io/badge/OTA_Firmware_Flashing-00C853?style=for-the-badge&logo=microchip&logoColor=white" alt="OTA Updates" />
-  <img src="https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white" alt="WebSockets" />
-  <img src="https://img.shields.io/badge/REST_APIs-025E8D?style=for-the-badge&logo=fastapi&logoColor=white" alt="REST APIs" />
-</p>
-
-#### 🧠 **AI / ML & Computer Vision**
-<p align="left">
-  <img src="https://img.shields.io/badge/Google_ML_Kit-FF6F00?style=for-the-badge&logo=google&logoColor=white" alt="ML Kit" />
-  <img src="https://img.shields.io/badge/Gemini_AI_API-8E44AD?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Gemini API" />
-  <img src="https://img.shields.io/badge/CameraX_60FPS-00D2FF?style=for-the-badge&logo=android&logoColor=black" alt="CameraX" />
-  <img src="https://img.shields.io/badge/Image_Inference-E91E63?style=for-the-badge&logo=opencv&logoColor=white" alt="Image Inference" />
-</p>
-
-#### 💾 **Databases & Architecture**
-<p align="left">
-  <img src="https://img.shields.io/badge/Room_Database-4285F4?style=for-the-badge&logo=sqlite&logoColor=white" alt="Room DB" />
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/Clean_Architecture-3DDC84?style=for-the-badge&logo=android&logoColor=black" alt="Clean Architecture" />
-  <img src="https://img.shields.io/badge/MVVM-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="MVVM" />
-</p>
-
-#### 🛠️ **Developer Tools & Monetization**
-<p align="left">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white" alt="Gradle" />
-  <img src="https://img.shields.io/badge/Google_AdMob-EA4335?style=for-the-badge&logo=google-admob&logoColor=white" alt="AdMob" />
-  <img src="https://img.shields.io/badge/Google_Play_Console-412991?style=for-the-badge&logo=google-play&logoColor=white" alt="Play Console" />
-</p>
-
-<br>
-
----
-
-### 🚀 **Featured Commercial & Enterprise Projects**
-
-| Project Name | Category | Tech Stack | Key Description |
-| :--- | :--- | :--- | :--- |
-| **🧃 Dispenser ERP App** | IoT Commercial ERP | `Kotlin` `MQTT` `Room DB` | Real-time commercial liquid dispenser telemetry, offline buffer sync & inventory ERP dashboard. |
-| **⚡ OTA Firmware Flasher** | Hardware Utility | `USB Serial` `OTG` `Kotlin` | Hardware bootloader flasher over USB OTG FTDI drivers with binary verification & rollback. |
-| **🩸 Glucometer SDK** | Healthcare IoT | `Kotlin` `USB Host` `Crypto` | High-reliability Android SDK communicating with medical glucometers over USB OTG serial. |
-| **🍎 AI Calorie Counter** | ML Kit Vision | `CameraX` `ML Kit` `Compose` | On-device camera viewfinder performing real-time bounding box object detection & macro calorie breakdown. |
-| **🖼️ AI Image Gen** | Generative AI | `Gemini API` `CameraX` `Kotlin` | Camera bitmap pipeline streaming frames into Gemini & Nvidia AI generative image engines. |
-| **📍 GPS Map Cam Lite** | Play Store App | `CameraX` `GPS Telemetry` `EXIF` | Production Play Store app stamping live GPS coordinates, altitude & timestamps into photo metadata. |
-
-<br>
-
----
-
-### 📊 **GitHub Statistics & Activity**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=SharmaShubham07&show_icons=true&theme=dark&bg_color=0D1117&title_color=3DDC84&icon_color=3DDC84&text_color=E2E8F0&border_color=30363D" width="48%" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SharmaShubham07&layout=compact&theme=dark&bg_color=0D1117&title_color=7F52FF&text_color=E2E8F0&border_color=30363D" width="48%" alt="Top Languages" />
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SharmaShubham07&theme=dark&background=0D1117&ring=3DDC84&fire=3DDC84&currStreakLabel=3DDC84" width="97%" alt="GitHub Streak Stats" />
 </div>
 
 <br>
 
 ---
 
-### 📬 **Connect & Collaborate**
+### 💻 **Developer Architecture Snapshot (`ShubhamSharma.kt`)**
 
-<p align="left">
-  🌐 <b>Live Interactive Portfolio:</b> <a href="https://sharmashubham07.github.io/Portfolio/">https://sharmashubham07.github.io/Portfolio/</a><br>
-  💼 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/shubham-sharma-55b5821b9/">Shubham Sharma</a><br>
-  📱 <b>WhatsApp / Call:</b> <a href="https://wa.me/917889843353">+91 7889843353</a><br>
-  ✉️ <b>Email:</b> <a href="mailto:ss7773550@gmail.com">ss7773550@gmail.com</a><br>
-  📍 <b>Location:</b> Surat, Gujarat, India
-</p>
+```kotlin
+/**
+ * @author Shubham Sharma
+ * @title Android Developer, AI/ML Developer & IoT Specialist
+ * @location Surat, Gujarat, India
+ */
+object ShubhamSharma : AndroidDeveloper() {
+    const val YEARS_EXPERIENCE = "2+ Years"
+    const val CURRENT_ROLE = "Application Software Developer @ Susamp Infotech"
+    const val PAST_ROLE = "Software Developer @ LeonsIntegrations Pvt. Ltd."
+    
+    val coreStack = listOf("Kotlin", "Jetpack Compose", "Coroutines & Flow", "Room DB", "Clean Architecture")
+    val hardwareIoT = listOf("MQTT Telemetry (QoS 1)", "USB Serial FTDI", "OTA Firmware Flashing")
+    val aiVision = listOf("Google ML Kit (On-Device)", "Gemini API", "Nvidia Generative AI")
+
+    fun getImpactMetrics(): String {
+        return "Reduced processing latency by 30% & led 3 commercial IoT product apps!"
+    }
+}
+```
+
+<br>
+
+---
+
+### 🏆 **GitHub Profile Trophies**
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=SharmaShubham07&theme=darkhub&column=6&margin-w=10&margin-h=10&no-bg=true" width="100%" alt="GitHub Trophies" />
+</div>
+
+<br>
+
+---
+
+### 🛠️ **Tech Stack & Capabilities**
+
+| Domain | Technologies & Frameworks |
+| :--- | :--- |
+| **🤖 Native Android** | <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Jetpack_Compose-4285F4?style=flat-square&logo=jetpack-compose&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Coroutines-00C853?style=flat-square&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Room_DB-4285F4?style=flat-square&logo=sqlite&logoColor=white"/> |
+| **📡 IoT Telemetry** | <img src="https://img.shields.io/badge/MQTT_QoS_1-660066?style=flat-square&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/USB_OTG_Serial-FF6F00?style=flat-square&logo=usb&logoColor=white"/> <img src="https://img.shields.io/badge/OTA_Flashing-00C853?style=flat-square&logo=microchip&logoColor=white"/> <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white"/> |
+| **🧠 AI / Computer Vision** | <img src="https://img.shields.io/badge/Google_ML_Kit-FF6F00?style=flat-square&logo=google&logoColor=white"/> <img src="https://img.shields.io/badge/Gemini_AI-8E44AD?style=flat-square&logo=google-gemini&logoColor=white"/> <img src="https://img.shields.io/badge/CameraX_60FPS-00D2FF?style=flat-square&logo=android&logoColor=black"/> |
+| **🛠️ Tools & Monetization** | <img src="https://img.shields.io/badge/Android_Studio_2026-3DDC84?style=flat-square&logo=android-studio&logoColor=black"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/AdMob-EA4335?style=flat-square&logo=google-admob&logoColor=white"/> |
+
+<br>
+
+---
+
+### 🚀 **Featured Commercial & Enterprise Apps**
+
+<div align="center">
+
+```
+  📱 [Dispenser ERP]  --->  Real-Time Commercial IoT Dispensers over MQTT Telemetry & Offline Room Sync
+  ⚡ [OTA Flasher]    --->  USB OTG FTDI Hardware Bootloader Flasher & Firmware Verification
+  🩸 [Glucometer SDK] --->  Medical Serial Sensor SDK Communicating via Native USB Host Driver
+  🍎 [AI Calorie]     --->  On-Device ML Kit Camera Viewfinder Object Scanner & Nutrient Calculator
+  🖼️ [AI Image Gen]   --->  CameraX 60FPS Raw Frame Capture to Gemini & Nvidia AI Ingestion
+  📍 [GPS Map Cam]    --->  Play Store Production App Stamping Metadata (EXIF/GPS/Altitude) into Photos
+```
+
+</div>
+
+<br>
+
+---
+
+### 📊 **GitHub Activity & Analytics**
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=SharmaShubham07&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=3DDC84&icon_color=3DDC84" width="48%" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SharmaShubham07&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=7F52FF" width="48%" alt="Top Languages" />
+</div>
 
 <br>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=SharmaShubham07&color=3DDC84&style=flat-square&label=Profile+Views" alt="Profile Views" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SharmaShubham07&theme=tokyonight&background=0D1117&hide_border=true&ring=3DDC84&fire=3DDC84&currStreakLabel=3DDC84" width="97%" alt="Streak Stats" />
+</div>
+
+<br>
+
+---
+
+### 🌐 **Interactive Portfolio & Contact**
+
+<p align="center">
+  <b>Explore my interactive Android Studio IDE Web Portfolio:</b><br>
+  👉 <a href="https://sharmashubham07.github.io/Portfolio/"><b>https://sharmashubham07.github.io/Portfolio/</b></a>
+</p>
+
+<div align="center">
+  <br>
+  <img src="https://komarev.com/ghpvc/?username=SharmaShubham07&color=3DDC84&style=for-the-badge&label=PROFILE+VIEWS+👁️" alt="Profile Views" />
+  <br><br>
+  <sub><i>Designed with ❤️ & Kotlin Coroutines by Shubham Sharma</i></sub>
 </div>
