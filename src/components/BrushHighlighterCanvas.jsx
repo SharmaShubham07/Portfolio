@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Paintbrush, Edit3, Eraser, Trash2, Sparkles, X, Check, Copy, Share2, StickyNote } from "lucide-react";
+import { Paintbrush, Edit3, Eraser, Trash2, Sparkles, X, Check, Copy, Share2, StickyNote, Hand, MousePointer } from "lucide-react";
 
 export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
   const canvasRef = useRef(null);
-  const [tool, setTool] = useState("highlighter"); // "highlighter" | "pen" | "eraser"
+  const [mode, setMode] = useState("draw"); // "draw" (captures pointer for drawing) | "navigate" (pointer-events-none for scrolling & clicking tabs)
+  const [tool, setTool] = useState("highlighter"); // "highlighter" | "pen" | "eraser" | "note"
   const [color, setColor] = useState("#FFE600"); // default neon yellow
   const [brushSize, setBrushSize] = useState(18);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -24,7 +25,6 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
     const handleResize = () => {
       if (canvasRef.current) {
         const canvas = canvasRef.current;
-        const rect = canvas.parentElement.getBoundingClientRect();
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       }
@@ -35,9 +35,27 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
     return () => window.removeEventListener("resize", handleResize);
   }, [isActive]);
 
+  // Forward mouse wheel scrolling to underlying scrollable containers
+  const handleWheelScroll = (e) => {
+    // Find open scrollable containers in the workspace (editor view or full website)
+    const scrollContainers = document.querySelectorAll(".custom-scrollbar, .overflow-y-auto");
+    let scrolled = false;
+
+    scrollContainers.forEach((container) => {
+      if (container && container.scrollHeight > container.clientHeight) {
+        container.scrollTop += e.deltaY;
+        scrolled = true;
+      }
+    });
+
+    if (!scrolled) {
+      window.scrollBy({ top: e.deltaY, behavior: "auto" });
+    }
+  };
+
   // Drawing logic
   const startDrawing = (e) => {
-    if (!isActive || !canvasRef.current) return;
+    if (!isActive || mode !== "draw" || !canvasRef.current) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const rect = canvas.getBoundingClientRect();
@@ -50,7 +68,7 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
   };
 
   const draw = (e) => {
-    if (!isDrawing || !isActive || !canvasRef.current) return;
+    if (!isDrawing || !isActive || mode !== "draw" || !canvasRef.current) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     const rect = canvas.getBoundingClientRect();
@@ -96,12 +114,12 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
 
   // Handle Add Sticky Note Annotation
   const handleAddNote = (e) => {
-    if (tool !== "note" || !isActive) return;
+    if (tool !== "note" || !isActive || mode !== "draw") return;
     const noteText = prompt("Enter a note or summary point for this highlighted section:");
-    if (noteText) {
+    if (noteText && noteText.trim()) {
       setNotes((prev) => [
         ...prev,
-        { id: Date.now(), text: noteText, x: e.clientX, y: e.clientY, color },
+        { id: Date.now(), x: e.clientX, y: e.clientY, text: noteText.trim() },
       ]);
     }
   };
@@ -124,8 +142,11 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
     <>
       {/* OVERLAY DRAWING CANVAS */}
       <div
+        onWheel={handleWheelScroll}
         className={`fixed inset-0 z-40 ${
-          isActive ? "pointer-events-auto cursor-crosshair" : "pointer-events-none"
+          isActive && mode === "draw"
+            ? "pointer-events-auto cursor-crosshair"
+            : "pointer-events-none"
         }`}
         onClick={handleAddNote}
       >
@@ -153,7 +174,7 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
 
       {/* FLOATING HIGHLIGHTER TOOLBAR */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#12141C]/90 backdrop-blur-2xl border border-white/15 px-4 py-2.5 rounded-2xl shadow-2xl flex items-center space-x-3 text-xs font-mono select-none">
-        {/* Toggle Highlighter Tool */}
+        {/* Toggle Highlighter Tool On/Off */}
         <button
           onClick={onToggleActive}
           className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl font-bold transition-all cursor-pointer ${
@@ -163,75 +184,110 @@ export function BrushHighlighterCanvas({ isActive, onToggleActive }) {
           }`}
         >
           <Paintbrush size={15} />
-          <span>{isActive ? "Highlighting ON 🖌️" : "Book Brush Tool 🖌️"}</span>
+          <span>{isActive ? "Brush Active 🖌️" : "Book Brush Tool 🖌️"}</span>
         </button>
 
         {isActive && (
           <>
             <div className="h-5 w-[1px] bg-white/20" />
 
-            {/* Brush Subtools */}
-            <div className="flex items-center space-x-1">
+            {/* Mode Switcher: Draw vs Scroll & Navigate */}
+            <div className="flex items-center space-x-1 bg-white/10 p-0.5 rounded-xl border border-white/15">
               <button
-                onClick={() => setTool("highlighter")}
-                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                  tool === "highlighter" ? "bg-white/20 text-amber-300 font-bold" : "text-slate-400 hover:text-white"
+                onClick={() => setMode("draw")}
+                className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  mode === "draw"
+                    ? "bg-amber-400 text-slate-950 shadow-sm"
+                    : "text-slate-300 hover:text-white"
                 }`}
-                title="Book Highlighter Marker"
+                title="Draw Highlights & Notes on Screen"
               >
-                <Paintbrush size={14} />
+                <Paintbrush size={13} />
+                <span>Draw</span>
               </button>
 
               <button
-                onClick={() => setTool("pen")}
-                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                  tool === "pen" ? "bg-white/20 text-[#3DDC84] font-bold" : "text-slate-400 hover:text-white"
+                onClick={() => setMode("navigate")}
+                className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                  mode === "navigate"
+                    ? "bg-[#3574F0] text-white shadow-sm"
+                    : "text-slate-300 hover:text-white"
                 }`}
-                title="Freehand Pen Tool"
+                title="Scroll pages and click buttons underneath while keeping highlights visible"
               >
-                <Edit3 size={14} />
+                <Hand size={13} />
+                <span>Scroll & Click 👆</span>
               </button>
-
-              <button
-                onClick={() => setTool("note")}
-                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                  tool === "note" ? "bg-white/20 text-sky-400 font-bold" : "text-slate-400 hover:text-white"
-                }`}
-                title="Add Sticky Note Annotation"
-              >
-                <StickyNote size={14} />
-              </button>
-
-              <button
-                onClick={() => setTool("eraser")}
-                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                  tool === "eraser" ? "bg-white/20 text-rose-400 font-bold" : "text-slate-400 hover:text-white"
-                }`}
-                title="Eraser"
-              >
-                <Eraser size={14} />
-              </button>
-            </div>
-
-            {/* Color Palette Picker */}
-            <div className="flex items-center space-x-1 pl-1">
-              {colors.map((c) => (
-                <button
-                  key={c.hex}
-                  onClick={() => {
-                    setColor(c.hex);
-                    if (tool === "eraser") setTool("highlighter");
-                  }}
-                  style={{ backgroundColor: c.hex }}
-                  className={`w-5 h-5 rounded-full transition-transform cursor-pointer border border-white/40 ${
-                    color === c.hex && tool !== "eraser" ? "scale-125 ring-2 ring-white" : "opacity-80 hover:opacity-100"
-                  }`}
-                  title={c.name}
-                />
-              ))}
             </div>
 
             <div className="h-5 w-[1px] bg-white/20" />
+
+            {/* Brush Subtools */}
+            {mode === "draw" && (
+              <>
+                <div className="flex items-center space-x-1">
+                  <button
+                    onClick={() => setTool("highlighter")}
+                    className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                      tool === "highlighter" ? "bg-white/20 text-amber-300 font-bold" : "text-slate-400 hover:text-white"
+                    }`}
+                    title="Book Highlighter Marker"
+                  >
+                    <Paintbrush size={14} />
+                  </button>
+
+                  <button
+                    onClick={() => setTool("pen")}
+                    className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                      tool === "pen" ? "bg-white/20 text-[#3DDC84] font-bold" : "text-slate-400 hover:text-white"
+                    }`}
+                    title="Freehand Pen Tool"
+                  >
+                    <Edit3 size={14} />
+                  </button>
+
+                  <button
+                    onClick={() => setTool("note")}
+                    className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                      tool === "note" ? "bg-white/20 text-sky-400 font-bold" : "text-slate-400 hover:text-white"
+                    }`}
+                    title="Add Sticky Note Annotation"
+                  >
+                    <StickyNote size={14} />
+                  </button>
+
+                  <button
+                    onClick={() => setTool("eraser")}
+                    className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
+                      tool === "eraser" ? "bg-white/20 text-rose-400 font-bold" : "text-slate-400 hover:text-white"
+                    }`}
+                    title="Eraser"
+                  >
+                    <Eraser size={14} />
+                  </button>
+                </div>
+
+                {/* Color Palette Picker */}
+                <div className="flex items-center space-x-1 pl-1">
+                  {colors.map((c) => (
+                    <button
+                      key={c.hex}
+                      onClick={() => {
+                        setColor(c.hex);
+                        if (tool === "eraser") setTool("highlighter");
+                      }}
+                      style={{ backgroundColor: c.hex }}
+                      className={`w-5 h-5 rounded-full transition-transform cursor-pointer border border-white/40 ${
+                        color === c.hex && tool !== "eraser" ? "scale-125 ring-2 ring-white" : "opacity-80 hover:opacity-100"
+                      }`}
+                      title={c.name}
+                    />
+                  ))}
+                </div>
+
+                <div className="h-5 w-[1px] bg-white/20" />
+              </>
+            )}
 
             {/* Clear All */}
             <button
