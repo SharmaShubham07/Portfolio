@@ -1,6 +1,7 @@
 import React from "react";
 import { Play, Smartphone, Sun, Moon, Sparkles, FolderTree, Terminal, Globe, Code2, Paintbrush } from "lucide-react";
 import { AndroidBugdroidIcon } from "./icons/TechIcons";
+import { LiveClock } from "./LiveClock";
 import confetti from "canvas-confetti";
 
 export function TopNavbar({
@@ -35,7 +36,7 @@ export function TopNavbar({
 
   return (
     <header className="h-10 border-b border-[var(--border-color)] bg-[var(--bg-header)] text-[var(--text-main)] flex items-center justify-between px-3 text-xs select-none relative z-50 transition-colors duration-200 shadow-md">
-      {/* Left section: Logo + Titlebar Menu Items */}
+      {/* Left section: Logo + Titlebar Menu Items + Live Clock */}
       <div className="flex items-center space-x-3 overflow-hidden">
         {/* Mobile Sidebar Hamburger Toggle */}
         <button
@@ -57,6 +58,11 @@ export function TopNavbar({
           <span className="hidden xl:inline text-[9px] px-1.5 py-0.2 rounded bg-[#7F52FF]/20 text-[#7F52FF] border border-[#7F52FF]/40 font-mono font-bold">
             2026.1 AI
           </span>
+        </div>
+
+        {/* Live System Time Clock Widget */}
+        <div className="hidden lg:flex items-center px-2 py-0.5 rounded bg-[var(--bg-tertiary)] border border-[var(--border-color)]">
+          <LiveClock showIcon={true} className="text-[11px]" />
         </div>
 
         {/* IDE Top Menu Items */}

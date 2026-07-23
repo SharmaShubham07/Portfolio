@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X, Wifi, Battery, Signal, Camera, Play, RefreshCw, CheckCircle2, Sliders, MapPin, Cpu, ShieldCheck, Sparkles, FileText, Activity, Zap, ChevronDown } from "lucide-react";
 import { AndroidBugdroidIcon } from "./icons/TechIcons";
+import { LiveClock } from "./LiveClock";
 
 export function PhoneEmulatorPanel({
   activeAppId = "dispenser",
@@ -95,7 +96,7 @@ export function PhoneEmulatorPanel({
 
           {/* Status Bar */}
           <div className="h-6 px-4 pt-1 flex items-center justify-between text-[10px] text-slate-300 font-sans font-semibold z-40 select-none">
-            <span>10:08</span>
+            <LiveClock showIcon={false} className="text-[10px] text-slate-200" />
             <div className="flex items-center space-x-1.5">
               <Signal size={11} />
               <Wifi size={11} />

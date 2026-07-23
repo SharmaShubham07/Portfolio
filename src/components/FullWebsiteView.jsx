@@ -3,6 +3,7 @@ import { Play, Send, Award, Cpu, ShieldCheck, Sparkles, MapPin, ExternalLink, Ch
 import { developerInfo, projectsData, achievementsData, skillsData, experienceData } from "../data/portfolioData";
 import { KotlinIcon, GeminiIcon, MLKitIcon, ComposeIcon, AndroidBugdroidIcon, LinkedInIcon, GithubIcon } from "./icons/TechIcons";
 import { ProjectDetailModal } from "./ProjectDetailModal";
+import { LiveClock } from "./LiveClock";
 
 export function FullWebsiteView({
   onSwitchToIDE,
@@ -169,8 +170,13 @@ export function FullWebsiteView({
           </div>
         </div>
 
-        {/* Quick Contact & View Switcher */}
+        {/* Quick Contact & Live Time Clock & View Switcher */}
         <div className="flex items-center space-x-2 md:space-x-3">
+          {/* Live Time Clock Widget */}
+          <div className="hidden lg:flex items-center px-3 py-1.5 rounded-xl bg-white/10 border border-white/15">
+            <LiveClock showIcon={true} className="text-xs text-white" />
+          </div>
+
           <a
             href={developerInfo.github}
             target="_blank"
