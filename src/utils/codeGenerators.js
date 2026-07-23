@@ -8,6 +8,10 @@ export function getKotlinCodeForFile(fileId, data) {
       return generateProfileXmlCode();
     case "about-me":
       return generateAboutMeCode();
+    case "about-bio":
+      return generateBioSummaryCode();
+    case "about-career":
+      return generateCareerOverviewCode();
     case "exp-susamp":
       return generateExpSusampCode();
     case "exp-leons":
@@ -236,12 +240,28 @@ function generateProjectCode(className, projName, architecture, developer) {
   ];
 }
 
-function generateContactCode() {
+function generateBioSummaryCode() {
   return [
-    { line: 1, text: 'package com.shubham.portfolio.contact', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.contact' }] },
-    { line: 2, text: 'object Contact {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' Contact' }, { t: 'text', v: ' {' }] },
-    { line: 3, text: '    const val PHONE = "+91 7889843353"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' PHONE' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"+91 7889843353"' }] },
-    { line: 4, text: '    const val WHATSAPP = "https://wa.me/917889843353"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' WHATSAPP' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"https://wa.me/917889843353"' }] },
-    { line: 5, text: '}' }
+    { line: 1, text: 'package com.shubham.portfolio.about', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.about' }] },
+    { line: 2, text: '' },
+    { line: 3, text: 'object BioSummary {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' BioSummary' }, { t: 'text', v: ' {' }] },
+    { line: 4, text: '    const val NAME = "Shubham Sharma"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' NAME' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Shubham Sharma"' }] },
+    { line: 5, text: '    const val ROLE = "Android Developer, AI/ML Developer & IoT Specialist"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' ROLE' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Android Developer, AI/ML Developer & IoT Specialist"' }] },
+    { line: 6, text: '    const val LOCATION = "Surat, Gujarat, India"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' LOCATION' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Surat, Gujarat, India"' }] },
+    { line: 7, text: '    const val TOTAL_EXPERIENCE = "2+ Years Production Experience"', tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' TOTAL_EXPERIENCE' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"2+ Years Production Experience"' }] },
+    { line: 8, text: '    val coreDomain = listOf("Native Kotlin", "MQTT Telemetry", "USB Serial OTG", "Google ML Kit Vision", "Gemini AI")', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' coreDomain' }, { t: 'text', v: ' = ' }, { t: 'type', v: 'listOf' }, { t: 'text', v: '(' }, { t: 'string', v: '"Native Kotlin", "MQTT Telemetry", "USB Serial OTG", "Google ML Kit Vision", "Gemini AI"' }, { t: 'text', v: ')' }] },
+    { line: 9, text: '}' }
+  ];
+}
+
+function generateCareerOverviewCode() {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.about', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.about' }] },
+    { line: 2, text: '' },
+    { line: 3, text: 'class CareerOverview {', tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ' CareerOverview' }, { t: 'text', v: ' {' }] },
+    { line: 4, text: '    val currentCompany = "Susamp Infotech (Surat, Gujarat, India)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' currentCompany' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Susamp Infotech (Surat, Gujarat, India)"' }] },
+    { line: 5, text: '    val pastCompany = "LeonsIntegrations Pvt. Ltd. (Vadodara, Gujarat, India)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' pastCompany' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"LeonsIntegrations Pvt. Ltd. (Vadodara, Gujarat, India)"' }] },
+    { line: 6, text: '    val impactMetrics = "-30% Processing Latency Reduction & +20% Client Rating"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' impactMetrics' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"-30% Processing Latency Reduction & +20% Client Rating"' }] },
+    { line: 7, text: '}' }
   ];
 }
