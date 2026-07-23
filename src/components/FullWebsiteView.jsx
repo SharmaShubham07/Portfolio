@@ -172,6 +172,16 @@ export function FullWebsiteView({
         {/* Quick Contact & View Switcher */}
         <div className="flex items-center space-x-2 md:space-x-3">
           <a
+            href={developerInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold border border-white/20 transition-all cursor-pointer shadow-sm"
+          >
+            <GithubIcon size={14} />
+            <span>GitHub</span>
+          </a>
+
+          <a
             href={developerInfo.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -213,6 +223,16 @@ export function FullWebsiteView({
             {/* Quick Contact & Action Buttons */}
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
               <a
+                href={developerInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs font-mono shadow-md transition-all active:scale-95 cursor-pointer flex items-center space-x-2 border border-white/20"
+              >
+                <GithubIcon size={16} />
+                <span>GitHub Profile</span>
+              </a>
+
+              <a
                 href={developerInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -246,8 +266,15 @@ export function FullWebsiteView({
               <div className="absolute top-0 left-0 right-0 h-1.5 kotlin-gradient-bg rounded-t-3xl" />
 
               <div className="text-center space-y-4">
-                <div className="relative inline-block">
-                  <div className="w-32 h-32 rounded-3xl p-1 kotlin-gradient-bg shadow-2xl mx-auto">
+                <div
+                  onClick={() => {
+                    onSwitchToIDE();
+                    onSelectFile("profile-image");
+                  }}
+                  className="relative inline-block cursor-pointer group"
+                  title="Click to inspect profile avatar XML layout!"
+                >
+                  <div className="w-32 h-32 rounded-3xl p-1 kotlin-gradient-bg shadow-2xl mx-auto group-hover:scale-105 transition-transform">
                     <img
                       src={developerInfo.avatarUrl}
                       alt={developerInfo.name}

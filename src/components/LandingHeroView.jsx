@@ -111,8 +111,12 @@ export function LandingHeroView({
 
           <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
             {/* Profile Avatar Frame */}
-            <div className="relative shrink-0">
-              <div className="w-28 h-28 md:w-36 md:h-36 rounded-3xl p-1 kotlin-gradient-bg shadow-2xl">
+            <div
+              onClick={() => onSelectFile("profile-image")}
+              className="relative shrink-0 cursor-pointer group"
+              title="Click to view profile avatar XML layout!"
+            >
+              <div className="w-28 h-28 md:w-36 md:h-36 rounded-3xl p-1 kotlin-gradient-bg shadow-2xl group-hover:scale-105 transition-transform">
                 <img
                   src={developerInfo.avatarUrl}
                   alt={developerInfo.name}
@@ -154,6 +158,17 @@ export function LandingHeroView({
                   <MapPin size={14} className="text-rose-400" />
                   <span>Surat, Gujarat, India</span>
                 </span>
+                <span className="text-[var(--text-muted)]">•</span>
+                <a
+                  href={developerInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:underline flex items-center space-x-1"
+                >
+                  <GithubIcon size={14} />
+                  <span>GitHub Profile</span>
+                  <ArrowUpRight size={12} />
+                </a>
                 <span className="text-[var(--text-muted)]">•</span>
                 <a
                   href={developerInfo.linkedin}
