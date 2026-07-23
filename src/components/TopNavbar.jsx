@@ -114,14 +114,14 @@ export function TopNavbar({
           )}
         </button>
 
-        {/* "Run ▶" Button */}
+        {/* "Run" Button */}
         <button
           onClick={handleRun}
           className="flex items-center space-x-1.5 px-3 py-1 rounded-md bg-gradient-to-r from-[#3574F0] to-[#2B63D9] hover:from-[#2B63D9] hover:to-[#1E4EB8] text-white font-medium shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer glass-pill font-mono border border-blue-400/30"
           title="Run App (Build & Open AVD Emulator)"
         >
-          <Play size={12} className="fill-current text-white" />
-          <span className="text-[11px] tracking-wide font-bold">Run ▶</span>
+          <Play size={13} className="fill-[#3DDC84] text-[#3DDC84]" />
+          <span className="text-[11px] tracking-wide font-bold">Run</span>
         </button>
 
         {/* Liquid Glass Toggle */}
@@ -174,7 +174,7 @@ export function TopNavbar({
           {theme === "darcula" ? (
             <Sun size={15} className="text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.5)]" />
           ) : (
-            <Moon size={15} className="text-indigo-600 drop-shadow-[0_0_6px_rgba(79,70,229,0.5)]" />
+            <Moon size={15} className="text-[#3574F0] drop-shadow-[0_0_6px_rgba(53,116,240,0.5)]" />
           )}
         </button>
       </div>
