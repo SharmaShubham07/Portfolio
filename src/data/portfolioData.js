@@ -74,6 +74,144 @@ export const fileStructure = [
     icon: "kotlin",
     tag: "Past Experience",
   },
+
+  // ---------------- AI / ML Folder Files ----------------
+  {
+    id: "aiml-img2img",
+    name: "AiImageGenApp.kt",
+    path: "app/src/main/ai_ml/AiImageGenApp.kt",
+    folder: "ai_ml",
+    type: "kotlin",
+    icon: "kotlin",
+    emulatorId: "ai_img2img",
+    tag: "Generative AI",
+  },
+  {
+    id: "aiml-calorie",
+    name: "AiCalorieCounter.kt",
+    path: "app/src/main/ai_ml/AiCalorieCounter.kt",
+    folder: "ai_ml",
+    type: "kotlin",
+    icon: "kotlin",
+    emulatorId: "ai_calorie",
+    tag: "ML Kit Vision",
+  },
+  {
+    id: "aiml-misc",
+    name: "AiIntegratedApps.kt",
+    path: "app/src/main/ai_ml/AiIntegratedApps.kt",
+    folder: "ai_ml",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "Hybrid AI",
+  },
+
+  // ---------------- Skills Folder Files ----------------
+  {
+    id: "skills-programming",
+    name: "ProgrammingLanguages.kt",
+    path: "app/src/main/skills/ProgrammingLanguages.kt",
+    folder: "skills",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "Languages",
+  },
+  {
+    id: "skills-android",
+    name: "AndroidFrameworks.kt",
+    path: "app/src/main/skills/AndroidFrameworks.kt",
+    folder: "skills",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "Android Stack",
+  },
+  {
+    id: "skills-networking",
+    name: "NetworkingProtocols.kt",
+    path: "app/src/main/skills/NetworkingProtocols.kt",
+    folder: "skills",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "IoT & Protocols",
+  },
+  {
+    id: "skills-databases",
+    name: "Databases.kt",
+    path: "app/src/main/skills/Databases.kt",
+    folder: "skills",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "SQLite & Room",
+  },
+  {
+    id: "skills-tools",
+    name: "ToolsAndConcepts.kt",
+    path: "app/src/main/skills/ToolsAndConcepts.kt",
+    folder: "skills",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "Tools & OTA",
+  },
+
+  // ---------------- Key Achievements Folder Files ----------------
+  {
+    id: "achieve-iot",
+    name: "IotSolutionsAchievement.kt",
+    path: "app/src/main/achievements/IotSolutionsAchievement.kt",
+    folder: "achievements",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "+20% Rating",
+  },
+  {
+    id: "achieve-performance",
+    name: "PerformanceOptimizationAchievement.kt",
+    path: "app/src/main/achievements/PerformanceOptimizationAchievement.kt",
+    folder: "achievements",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "-30% Time",
+  },
+  {
+    id: "achieve-library",
+    name: "ReusableKotlinLibraryAchievement.kt",
+    path: "app/src/main/achievements/ReusableKotlinLibraryAchievement.kt",
+    folder: "achievements",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "Enterprise Lib",
+  },
+  {
+    id: "achieve-hardware",
+    name: "HardwareCommunicationAchievement.kt",
+    path: "app/src/main/achievements/HardwareCommunicationAchievement.kt",
+    folder: "achievements",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "USB & Telemetry",
+  },
+
+  // ---------------- Education Folder Files ----------------
+  {
+    id: "edu-gh-patel",
+    name: "GHPatelCollege.kt",
+    path: "app/src/main/education/GHPatelCollege.kt",
+    folder: "education",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "B.E Degree",
+  },
+  {
+    id: "edu-shiksha-niketan",
+    name: "ShikshaNiketanSchool.kt",
+    path: "app/src/main/education/ShikshaNiketanSchool.kt",
+    folder: "education",
+    type: "kotlin",
+    icon: "kotlin",
+    tag: "HSC Science",
+  },
+
+  // ---------------- Projects Folder Files ----------------
   {
     id: "proj-dispenser",
     name: "DispenserErpApp.kt",
@@ -199,6 +337,54 @@ export const experienceData = [
       "Developed offline-first data sync engines using Room DB (SQLite) to buffer hardware telemetry when network connection drops.",
       "Reduced processing time by 30% through background coroutine optimization, receiving +20% higher client satisfaction ratings.",
     ],
+  },
+];
+
+export const educationData = [
+  {
+    id: "edu-gh-patel",
+    fileId: "edu-gh-patel",
+    institution: "G H Patel College of Engineering and Technology",
+    degree: "B.E in Computer Engineering",
+    period: "08/2020 – 04/2024",
+    location: "Anand, Gujarat, India",
+    details: "Bachelor of Engineering degree focused on Computer Science, Mobile Application Engineering, Embedded IoT Systems, and Data Structures.",
+  },
+  {
+    id: "edu-shiksha-niketan",
+    fileId: "edu-shiksha-niketan",
+    institution: "Shiksha Niketan Sr. Sec. School",
+    degree: "Higher Secondary Certificate (Science)",
+    period: "04/2019 – 04/2020",
+    location: "Jammu, India",
+    details: "Higher Secondary Certificate with focus on Physics, Chemistry, Mathematics, and Computer Science.",
+  },
+];
+
+export const achievementsData = [
+  {
+    id: "achieve-iot",
+    fileId: "achieve-iot",
+    title: "Led 3 IoT-Based Solutions (+20% Client Satisfaction)",
+    desc: "Spearheaded the development of 3 IoT-based commercial equipment applications (Dispenser ERP, OTA Firmware Flasher, Glucometer SDK), increasing overall client satisfaction by 20%.",
+  },
+  {
+    id: "achieve-performance",
+    fileId: "achieve-performance",
+    title: "-30% Processing Time Reduction",
+    desc: "Reduced application processing time and hardware packet parsing latency by 30% through optimized Kotlin Coroutines dispatchers and SQLite indexing.",
+  },
+  {
+    id: "achieve-library",
+    fileId: "achieve-library",
+    title: "Reusable Kotlin Enterprise Library",
+    desc: "Developed a modular, reusable Kotlin hardware communication library adopted across 2 enterprise-level production Android projects.",
+  },
+  {
+    id: "achieve-hardware",
+    fileId: "achieve-hardware",
+    title: "Enhanced Hardware Communication Reliability",
+    desc: "Enhanced hardware communication reliability over volatile MQTT cellular telemetry networks and USB OTG FTDI drivers.",
   },
 ];
 
@@ -380,18 +566,3 @@ export const skillsData = {
     "Play Console",
   ],
 };
-
-export const achievementsData = [
-  {
-    title: "2+ Years Native Android Experience",
-    desc: "Built and deployed enterprise IoT dispenser ERPs, medical SDKs, and generative AI Android apps.",
-  },
-  {
-    title: "-30% Processing Time Reduction",
-    desc: "Optimized Kotlin background coroutine dispatchers and SQLite indexing, reducing telemetry processing latency.",
-  },
-  {
-    title: "+20% Client Satisfaction Rating",
-    desc: "Engineered offline-first Room DB sync queues for volatile cellular connections in commercial dispenser environments.",
-  },
-];

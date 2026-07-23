@@ -12,6 +12,46 @@ export function getKotlinCodeForFile(fileId, data) {
       return generateExpSusampCode();
     case "exp-leons":
       return generateExpLeonsCode();
+
+    // AI & ML
+    case "aiml-img2img":
+    case "proj-ai-img2img":
+      return generateAiImageGenCode();
+    case "aiml-calorie":
+    case "proj-ai-calorie":
+      return generateAiCalorieCode();
+    case "aiml-misc":
+      return generateAiMiscCode();
+
+    // Skills
+    case "skills-programming":
+      return generateSkillsCode("ProgrammingLanguages", ["Kotlin", "Java", "Python", "React Native"]);
+    case "skills-android":
+      return generateSkillsCode("AndroidFrameworks", ["Jetpack Compose", "ViewModel", "LiveData", "Room DB", "Coroutines & Flow", "CameraX"]);
+    case "skills-networking":
+      return generateSkillsCode("NetworkingProtocols", ["MQTT Telemetry (QoS 1)", "WebSocket", "TCP/IP", "HTTP/HTTPS", "USB Serial Host (FTDI)"]);
+    case "skills-databases":
+      return generateSkillsCode("Databases", ["SQLite", "Room Database (Offline Sync Buffer)", "Encrypted Storage"]);
+    case "skills-tools":
+      return generateSkillsCode("ToolsAndConcepts", ["REST API Integration", "OTA Firmware Updates", "IoT Hardware Systems", "AdMob Monetization", "Git"]);
+
+    // Key Achievements
+    case "achieve-iot":
+      return generateAchievementCode("IotSolutionsAchievement", "Led 3 IoT-Based Solutions (+20% Client Satisfaction)", "Spearheaded 3 IoT commercial equipment apps (Dispenser ERP, OTA Flasher, Glucometer SDK).");
+    case "achieve-performance":
+      return generateAchievementCode("PerformanceOptimizationAchievement", "-30% Processing Time Reduction", "Optimized Kotlin Coroutines dispatchers and SQLite indexing, reducing hardware packet parsing latency.");
+    case "achieve-library":
+      return generateAchievementCode("ReusableKotlinLibraryAchievement", "Reusable Kotlin Enterprise Library", "Developed a modular hardware communication library adopted across 2 enterprise Android projects.");
+    case "achieve-hardware":
+      return generateAchievementCode("HardwareCommunicationAchievement", "Enhanced Hardware Communication Reliability", "Enhanced hardware communication reliability over volatile cellular MQTT networks & USB OTG FTDI drivers.");
+
+    // Education
+    case "edu-gh-patel":
+      return generateEducationCode("GHPatelCollege", "G H Patel College of Engineering and Technology", "B.E in Computer Engineering", "08/2020 – 04/2024", "Anand, Gujarat, India");
+    case "edu-shiksha-niketan":
+      return generateEducationCode("ShikshaNiketanSchool", "Shiksha Niketan Sr. Sec. School", "Higher Secondary Certificate (Science)", "04/2019 – 04/2020", "Jammu, India");
+
+    // Projects
     case "proj-dispenser":
       return generateProjectCode("dispenser");
     case "proj-ota":
@@ -24,22 +64,7 @@ export function getKotlinCodeForFile(fileId, data) {
       return generateProjectCode("surveycam");
     case "proj-reverseaudio":
       return generateProjectCode("reverseaudio");
-    case "proj-ai-img2img":
-      return generateProjectCode("ai_img2img");
-    case "proj-ai-calorie":
-      return generateProjectCode("ai_calorie");
-    case "aiml-img2img":
-      return generateProjectCode("ai_img2img");
-    case "aiml-calorie":
-      return generateProjectCode("ai_calorie");
-    case "aiml-misc":
-      return generateProjectCode("ai_misc");
-    case "tech-stack":
-      return generateTechStackCode();
-    case "achievements":
-      return generateAchievementsCode();
-    case "education":
-      return generateEducationCode();
+
     case "contact":
       return generateContactCode();
     default:
@@ -61,7 +86,7 @@ function generateProfileXmlCode() {
     { line: 10, text: '    app:shapeAppearanceOverlay="@style/RoundedCorner24dp"', tokens: [{ t: 'prop', v: '    app:shapeAppearanceOverlay' }, { t: 'text', v: '=' }, { t: 'string', v: '"@style/RoundedCorner24dp"' }] },
     { line: 11, text: '    app:strokeColor="#3DDC84"', tokens: [{ t: 'prop', v: '    app:strokeColor' }, { t: 'text', v: '=' }, { t: 'string', v: '"#3DDC84"' }] },
     { line: 12, text: '    app:strokeWidth="3dp"', tokens: [{ t: 'prop', v: '    app:strokeWidth' }, { t: 'text', v: '=' }, { t: 'string', v: '"3dp"' }] },
-    { line: 13, text: '    app:elevation="12dp" />', tokens: [{ t: 'text', v: '    ' }, { t: 'keyword', v: 'app:elevation="12dp" />' }] },
+    { line: 13, text: '    app:elevation="12dp" />', tokens: [{ t: 'keyword', v: '    app:elevation="12dp" />' }] },
   ];
 }
 
@@ -96,6 +121,78 @@ function generateAboutMeCode() {
   ];
 }
 
+function generateEducationCode(className, institution, degree, period, location) {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.education', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.education' }] },
+    { line: 2, text: '' },
+    { line: 3, text: `class ${className} {`, tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ` ${className}` }, { t: 'text', v: ' {' }] },
+    { line: 4, text: `    val institution = "${institution}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' institution' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${institution}"` }] },
+    { line: 5, text: `    val degree = "${degree}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' degree' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${degree}"` }] },
+    { line: 6, text: `    val period = "${period}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' period' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${period}"` }] },
+    { line: 7, text: `    val location = "${location}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' location' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${location}"` }] },
+    { line: 8, text: '}' }
+  ];
+}
+
+function generateAchievementCode(className, title, desc) {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.achievements', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.achievements' }] },
+    { line: 2, text: '' },
+    { line: 3, text: `object ${className} {`, tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ` ${className}` }, { t: 'text', v: ' {' }] },
+    { line: 4, text: `    const val TITLE = "${title}"`, tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' TITLE' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${title}"` }] },
+    { line: 5, text: `    const val IMPACT_DESCRIPTION = "${desc}"`, tokens: [{ t: 'keyword', v: '    const val' }, { t: 'prop', v: ' IMPACT_DESCRIPTION' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${desc}"` }] },
+    { line: 6, text: '}' }
+  ];
+}
+
+function generateSkillsCode(className, list) {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.skills', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.skills' }] },
+    { line: 2, text: '' },
+    { line: 3, text: `object ${className} {`, tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ` ${className}` }, { t: 'text', v: ' {' }] },
+    { line: 4, text: `    val list = listOf(`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' list' }, { t: 'text', v: ' = ' }, { t: 'type', v: 'listOf' }, { t: 'text', v: '(' }] },
+    ...list.map((item, idx) => ({
+      line: 5 + idx,
+      text: `        "${item}"${idx < list.length - 1 ? ',' : ''}`,
+      tokens: [{ t: 'string', v: `        "${item}"` }, { t: 'text', v: idx < list.length - 1 ? ',' : '' }]
+    })),
+    { line: 5 + list.length, text: '    )' },
+    { line: 6 + list.length, text: '}' }
+  ];
+}
+
+function generateAiImageGenCode() {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.ai_ml', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.ai_ml' }] },
+    { line: 2, text: '' },
+    { line: 3, text: 'class AiImageGenApp {', tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ' AiImageGenApp' }, { t: 'text', v: ' {' }] },
+    { line: 4, text: '    val cameraPipeline = "CameraX 60FPS Raw Bitmap Capture"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' cameraPipeline' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"CameraX 60FPS Raw Bitmap Capture"' }] },
+    { line: 5, text: '    val aiModels = listOf("Gemini API", "Nvidia AI Generative API")', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' aiModels' }, { t: 'text', v: ' = ' }, { t: 'type', v: 'listOf' }, { t: 'text', v: '(' }, { t: 'string', v: '"Gemini API", "Nvidia AI Generative API"' }, { t: 'text', v: ')' }] },
+    { line: 6, text: '}' }
+  ];
+}
+
+function generateAiCalorieCode() {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.ai_ml', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.ai_ml' }] },
+    { line: 2, text: '' },
+    { line: 3, text: 'class AiCalorieCounter {', tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ' AiCalorieCounter' }, { t: 'text', v: ' {' }] },
+    { line: 4, text: '    val visionEngine = "Google ML Kit Object Detection (On-Device)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' visionEngine' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Google ML Kit Object Detection (On-Device)"' }] },
+    { line: 5, text: '    val macroScanner = "Real-time Bounding Box Calorie & Protein Lookup"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' macroScanner' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Real-time Bounding Box Calorie & Protein Lookup"' }] },
+    { line: 6, text: '}' }
+  ];
+}
+
+function generateAiMiscCode() {
+  return [
+    { line: 1, text: 'package com.shubham.portfolio.ai_ml', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.ai_ml' }] },
+    { line: 2, text: '' },
+    { line: 3, text: 'object AiIntegratedApps {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' AiIntegratedApps' }, { t: 'text', v: ' {' }] },
+    { line: 4, text: '    val hybridArchitecture = "Fast On-Device ML Kit + Cloud AI Deep Inference"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' hybridArchitecture' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Fast On-Device ML Kit + Cloud AI Deep Inference"' }] },
+    { line: 5, text: '}' }
+  ];
+}
+
 function generateExpSusampCode() {
   return [
     { line: 1, text: 'package com.shubham.portfolio.experience', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.experience' }] },
@@ -122,30 +219,6 @@ function generateProjectCode(projId) {
   return [
     { line: 1, text: `package com.shubham.portfolio.projects.${projId}`, tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ` com.shubham.portfolio.projects.${projId}` }] },
     { line: 2, text: `class ${projId.toUpperCase()}App {`, tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ` ${projId.toUpperCase()}App` }, { t: 'text', v: ' {' }] },
-    { line: 3, text: '}' }
-  ];
-}
-
-function generateTechStackCode() {
-  return [
-    { line: 1, text: 'package com.shubham.portfolio.skills', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.skills' }] },
-    { line: 2, text: 'object TechStack {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' TechStack' }, { t: 'text', v: ' {' }] },
-    { line: 3, text: '}' }
-  ];
-}
-
-function generateAchievementsCode() {
-  return [
-    { line: 1, text: 'package com.shubham.portfolio.achievements', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.achievements' }] },
-    { line: 2, text: 'object Achievements {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' Achievements' }, { t: 'text', v: ' {' }] },
-    { line: 3, text: '}' }
-  ];
-}
-
-function generateEducationCode() {
-  return [
-    { line: 1, text: 'package com.shubham.portfolio.education', tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ' com.shubham.portfolio.education' }] },
-    { line: 2, text: 'object Education {', tokens: [{ t: 'keyword', v: 'object' }, { t: 'type', v: ' Education' }, { t: 'text', v: ' {' }] },
     { line: 3, text: '}' }
   ];
 }
