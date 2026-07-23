@@ -39,6 +39,15 @@ export const fileStructure = [
     tag: "Landing",
   },
   {
+    id: "profile-image",
+    name: "ic_profile_avatar.xml",
+    path: "app/src/main/res/drawable/ic_profile_avatar.xml",
+    folder: "res/drawable",
+    type: "xml",
+    icon: "xml",
+    tag: "Profile Avatar",
+  },
+  {
     id: "about-me",
     name: "ShubhamSharma.kt",
     path: "app/src/main/developer/ShubhamSharma.kt",
