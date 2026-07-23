@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ---------------- ULTRA-CLEAN PROFESSIONAL DESIGN SYSTEM ---------------- */
+
+:root {
+  /* JetBrains Obsidian Dark Theme (Default) */
+  --bg-primary: #0F1117;
+  --bg-secondary: #181A20;
+  --bg-tertiary: #22252D;
+  --bg-header: #14161D;
+  --bg-active-tab: #0F1117;
+  --bg-inactive-tab: #181A20;
+  --border-color: #262933;
+
+  --text-main: #E2E8F0;
+  --text-muted: #94A3B8;
+  --text-comment: #64748B;
+  --text-keyword: #CF8E6D;
+  --text-string: #6AAB73;
+  --text-annotation: #B3AE60;
+  --text-function: #56A8F5;
+  --text-type: #C77DBB;
+  --text-prop: #C77DBB;
+  --text-number: #2AACB8;
+
+  --accent-green: #3DDC84;
+  --accent-orange: #CF8E6D;
+  --accent-blue: #3574F0;
+  --accent-purple: #7F52FF;
+
+  --glass-bg: rgba(24, 26, 32, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 24px;
+}
+
+[data-theme="light"] {
+  /* IntelliJ Light Theme */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-header: #F8FAFC;
+  --bg-active-tab: #FFFFFF;
+  --bg-inactive-tab: #F8FAFC;
+  --border-color: #E2E8F0;
+
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --text-comment: #166534;
+  --text-keyword: #000080;
+  --text-string: #15803D;
+  --text-annotation: #854D0E;
+  --text-function: #0284C7;
+  --text-type: #7E22CE;
+  --text-prop: #7E22CE;
+  --text-number: #1D4ED8;
+
+  --accent-green: #15803D;
+  --accent-orange: #C75450;
+  --accent-blue: #3574F0;
+  --accent-purple: #7F52FF;
+
+  --glass-bg: rgba(248, 250, 252, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: 24px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+}
+
+/* ---------------- SYNTAX HIGHLIGHTING COLORS ---------------- */
+
+.token-keyword { color: var(--text-keyword); font-weight: 600; }
+.token-string { color: var(--text-string); }
+.token-comment { color: var(--text-comment); font-style: italic; }
+.token-annotation { color: var(--text-annotation); font-weight: 500; }
+.token-function { color: var(--text-function); font-weight: 500; }
+.token-type { color: var(--text-type); font-weight: 600; }
+.token-prop { color: var(--text-prop); }
+.token-number { color: var(--text-number); }
+
+/* ---------------- LIQUID GLASS & GLOW ---------------- */
+
+.glass-enabled .glass-panel {
+  background-color: var(--glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border-color: var(--glass-border) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.glass-enabled .glass-pill {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Gradient Accents */
+.kotlin-gradient-text {
+  background: linear-gradient(135deg, #7F52FF 0%, #C711E1 50%, #E44857 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kotlin-gradient-bg {
+  background: linear-gradient(135deg, #7F52FF 0%, #C711E1 50%, #E44857 100%);
+}
+
+.android-gradient-bg {
+  background: linear-gradient(135deg, #3DDC84 0%, #107C41 100%);
+}
+
+/* ---------------- CUSTOM SCROLLBAR ---------------- */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ---------------- CARD HOVER & SHINE ---------------- */
+
+.glass-card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 15px rgba(127, 82, 255, 0.15);
+  border-color: rgba(127, 82, 255, 0.4) !important;
+}
