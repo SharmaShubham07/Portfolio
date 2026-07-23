@@ -21,7 +21,14 @@ export function PhoneEmulatorPanel({
   ];
 
   return (
-    <aside className="w-full sm:w-[350px] border-l border-[var(--border-color)] bg-[var(--bg-secondary)] flex flex-col p-3.5 select-none shrink-0 relative glass-panel shadow-2xl">
+    <>
+      {/* Mobile Backdrop Overlay when AVD Phone Emulator is active */}
+      <div
+        onClick={onClose}
+        className="fixed inset-0 bg-black/80 backdrop-blur-xs z-40 md:hidden"
+      />
+
+      <aside className="fixed md:relative inset-y-0 right-0 z-50 w-full sm:w-[350px] border-l border-[var(--border-color)] bg-[var(--bg-secondary)] flex flex-col p-3.5 select-none shrink-0 glass-panel shadow-2xl overflow-y-auto custom-scrollbar">
       {/* Emulator Header */}
       <div className="flex items-center justify-between mb-2.5 text-xs font-mono text-[var(--text-main)] border-b border-[var(--border-color)] pb-2">
         <div className="flex items-center space-x-2 font-bold">
@@ -122,7 +129,8 @@ export function PhoneEmulatorPanel({
           </div>
         </div>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }
 
