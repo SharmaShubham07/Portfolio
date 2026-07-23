@@ -1,4 +1,4 @@
-// Generates structured Kotlin code representations with syntax tokens for all portfolio files
+// Generates rich, comprehensive Kotlin code representations with syntax tokens for all portfolio files
 
 export function getKotlinCodeForFile(fileId, data) {
   switch (fileId) {
@@ -53,17 +53,17 @@ export function getKotlinCodeForFile(fileId, data) {
 
     // Projects
     case "proj-dispenser":
-      return generateProjectCode("dispenser");
+      return generateProjectCode("DispenserERP", "IoT Commercial Dispenser ERP", "MQTT QoS 1 Telemetry, Offline Sync Buffer & Room DB", "Susamp Infotech");
     case "proj-ota":
-      return generateProjectCode("ota");
+      return generateProjectCode("OtaFirmwareFlasher", "Hardware OTA Bootloader Flasher", "USB OTG FTDI Serial Driver & Binary Verification", "LeonsIntegrations");
     case "proj-glucometer":
-      return generateProjectCode("glucometer");
+      return generateProjectCode("GlucometerSDK", "Medical Glucometer Sensor SDK", "USB OTG Host Driver & Cryptographic Log Packets", "LeonsIntegrations");
     case "proj-gpsmap":
-      return generateProjectCode("gpsmap");
+      return generateProjectCode("GpsMapCameraLite", "GPS Map Camera Lite (Play Store)", "CameraX 60FPS, EXIF Metadata & Geocopy Location", "Production App");
     case "proj-surveycam":
-      return generateProjectCode("surveycam");
+      return generateProjectCode("SurveyNoteCam", "Survey Note Camera & PDF Tool", "PDF Enterprise Exporter & Custom Stamp Overlay", "Production App");
     case "proj-reverseaudio":
-      return generateProjectCode("reverseaudio");
+      return generateProjectCode("ReverseAudioSinging", "Reverse Audio Singing Tool", "Android AudioRecord Engine & Reverse Buffer Processing", "Production App");
 
     case "contact":
       return generateContactCode();
@@ -112,12 +112,21 @@ function generateAboutMeCode() {
     { line: 2, text: '' },
     { line: 3, text: 'import com.shubham.portfolio.base.AndroidDeveloper', tokens: [{ t: 'keyword', v: 'import' }, { t: 'text', v: ' com.shubham.portfolio.base.' }, { t: 'type', v: 'AndroidDeveloper' }] },
     { line: 4, text: '' },
-    { line: 5, text: 'class ShubhamSharma : AndroidDeveloper() {', tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ' ShubhamSharma' }, { t: 'text', v: ' : ' }, { t: 'type', v: 'AndroidDeveloper' }, { t: 'text', v: '() {' }] },
-    { line: 6, text: '    val name = "Shubham Sharma"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' name' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Shubham Sharma"' }] },
-    { line: 7, text: '    val title = "Android Developer, AI/ML Developer & IoT Specialist"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' title' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Android Developer, AI/ML Developer & IoT Specialist"' }] },
-    { line: 8, text: '    val location = "Surat, Gujarat, India"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' location' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Surat, Gujarat, India"' }] },
-    { line: 9, text: '    val experience = "2+ Years Exp"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' experience' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"2+ Years Exp"' }] },
-    { line: 10, text: '}' }
+    { line: 5, text: '/** ', tokens: [{ t: 'comment', v: '/**' }] },
+    { line: 6, text: ' * About Shubham Sharma — Native Android, AI/ML & IoT Specialist', tokens: [{ t: 'comment', v: ' * About Shubham Sharma — Native Android, AI/ML & IoT Specialist' }] },
+    { line: 7, text: ' * Experience: 2+ Years Exp across Susamp Infotech & LeonsIntegrations', tokens: [{ t: 'comment', v: ' * Experience: 2+ Years Exp across Susamp Infotech & LeonsIntegrations' }] },
+    { line: 8, text: ' * Location: Surat, Gujarat, India', tokens: [{ t: 'comment', v: ' * Location: Surat, Gujarat, India' }] },
+    { line: 9, text: ' */', tokens: [{ t: 'comment', v: ' */' }] },
+    { line: 10, text: 'class ShubhamSharma : AndroidDeveloper() {', tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ' ShubhamSharma' }, { t: 'text', v: ' : ' }, { t: 'type', v: 'AndroidDeveloper' }, { t: 'text', v: '() {' }] },
+    { line: 11, text: '    val name = "Shubham Sharma"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' name' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Shubham Sharma"' }] },
+    { line: 12, text: '    val title = "Android Developer, AI/ML Developer & IoT Specialist"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' title' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Android Developer, AI/ML Developer & IoT Specialist"' }] },
+    { line: 13, text: '    val location = "Surat, Gujarat, India"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' location' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Surat, Gujarat, India"' }] },
+    { line: 14, text: '    val experience = "2+ Years Exp"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' experience' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"2+ Years Exp"' }] },
+    { line: 15, text: '    val currentCompany = "Susamp Infotech (Surat, Gujarat)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' currentCompany' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Susamp Infotech (Surat, Gujarat)"' }] },
+    { line: 16, text: '    val pastCompany = "LeonsIntegrations Pvt. Ltd. (Vadodara, Gujarat)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' pastCompany' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"LeonsIntegrations Pvt. Ltd. (Vadodara, Gujarat)"' }] },
+    { line: 17, text: '    val college = "G H Patel College of Engineering and Technology (B.E in Computer Engineering)"', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' college' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"G H Patel College of Engineering and Technology (B.E in Computer Engineering)"' }] },
+    { line: 18, text: '    val bio = "Application Software Developer with 2+ years of experience in native Android (Kotlin), IoT-based hardware telemetry (MQTT/USB OTG), and hybrid AI/ML model integrations (Google ML Kit + Gemini APIs). Delivered 9+ production apps with -30% latency reduction & +20% client satisfaction."', tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' bio' }, { t: 'text', v: ' = ' }, { t: 'string', v: '"Application Software Developer with 2+ years of experience in native Android (Kotlin), IoT-based hardware telemetry (MQTT/USB OTG), and hybrid AI/ML model integrations (Google ML Kit + Gemini APIs). Delivered 9+ production apps with -30% latency reduction & +20% client satisfaction."' }] },
+    { line: 19, text: '}' }
   ];
 }
 
@@ -128,7 +137,7 @@ function generateEducationCode(className, institution, degree, period, location)
     { line: 3, text: `class ${className} {`, tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ` ${className}` }, { t: 'text', v: ' {' }] },
     { line: 4, text: `    val institution = "${institution}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' institution' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${institution}"` }] },
     { line: 5, text: `    val degree = "${degree}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' degree' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${degree}"` }] },
-    { line: 6, text: `    val period = "${period}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' period' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${period}"` }] },
+    { line: 6, text: `    val period = "${period}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'period' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${period}"` }] },
     { line: 7, text: `    val location = "${location}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' location' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${location}"` }] },
     { line: 8, text: '}' }
   ];
@@ -215,11 +224,15 @@ function generateExpLeonsCode() {
   ];
 }
 
-function generateProjectCode(projId) {
+function generateProjectCode(className, projName, architecture, developer) {
   return [
-    { line: 1, text: `package com.shubham.portfolio.projects.${projId}`, tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ` com.shubham.portfolio.projects.${projId}` }] },
-    { line: 2, text: `class ${projId.toUpperCase()}App {`, tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ` ${projId.toUpperCase()}App` }, { t: 'text', v: ' {' }] },
-    { line: 3, text: '}' }
+    { line: 1, text: `package com.shubham.portfolio.projects`, tokens: [{ t: 'keyword', v: 'package' }, { t: 'text', v: ` com.shubham.portfolio.projects` }] },
+    { line: 2, text: '' },
+    { line: 3, text: `class ${className}App {`, tokens: [{ t: 'keyword', v: 'class' }, { t: 'type', v: ` ${className}App` }, { t: 'text', v: ' {' }] },
+    { line: 4, text: `    val appName = "${projName}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' appName' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${projName}"` }] },
+    { line: 5, text: `    val architecture = "${architecture}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' architecture' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${architecture}"` }] },
+    { line: 6, text: `    val developer = "${developer}"`, tokens: [{ t: 'keyword', v: '    val' }, { t: 'prop', v: ' developer' }, { t: 'text', v: ' = ' }, { t: 'string', v: `"${developer}"` }] },
+    { line: 7, text: '}' }
   ];
 }
 
