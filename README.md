@@ -1,21 +1,16 @@
 <div align="center">
 
-  <!-- Typing Effect Banner -->
+  <!-- Android Studio IDE Header GIF / Typing Banner -->
   <a href="https://sharmashubham07.github.io/Portfolio/">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=28&pause=1000&color=3DDC84&center=true&vCenter=true&width=750&height=70&lines=Hi+%F0%9F%90%9B+I'm+Shubham+Sharma;Android+Developer+%7C+AI%2FML+%7C+IoT+Specialist;2%2B+Years+Exp+%E2%80%A2+Surat%2C+Gujarat%2C+India;Building+Next-Gen+Kotlin+%2B+IoT+%2B+AI+Apps" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&size=26&pause=1000&color=3DDC84&center=true&vCenter=true&width=800&height=75&lines=%F0%9F%A4%96+Shubham+Sharma+%E2%80%A2+Android+Dev+%7C+AI%2FML+%7C+IoT;%F0%9F%90%9B+Turning+99+Bugs+into+0+Runtime+Exceptions...;%E2%9C%85+BUILD+SUCCESSFUL+in+1.42s+(0+Errors%2C+2%2B+Yrs+Exp);%F0%9F%9A%80+Explore+Interactive+IDE+Portfolio+Below!" alt="Typing Banner" />
   </a>
 
   <br>
 
-  <!-- Animated Wave Line -->
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="Header Divider" />
-
-  <br><br>
-
   <!-- Glowing Action Badges -->
   <p align="center">
     <a href="https://sharmashubham07.github.io/Portfolio/" target="_blank">
-      <img src="https://img.shields.io/badge/🚀_LIVE_PORTFOLIO-3DDC84?style=for-the-badge&logo=android&logoColor=000000" alt="Live Portfolio" />
+      <img src="https://img.shields.io/badge/🚀_LIVE_IDE_PORTFOLIO-3DDC84?style=for-the-badge&logo=android&logoColor=000000" alt="Live Portfolio" />
     </a>
     <a href="https://www.linkedin.com/in/shubham-sharma-55b5821b9/" target="_blank">
       <img src="https://img.shields.io/badge/LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
@@ -37,6 +32,36 @@
 
 ---
 
+### 🟢 **BUILD STATUS & LOGCAT STREAM**
+
+```log
+[09:41:00] D/AndroidStudio: Initializing developer environment...
+[09:41:01] I/DeveloperInfo: Name: Shubham Sharma | Role: Native Android & IoT Specialist (2+ Yrs Exp)
+[09:41:02] W/BugTracker: 🐛 Found 99 Bugs in volatile MQTT telemetry & USB Serial FTDI packet drops...
+[09:41:03] I/KotlinCoroutines: ⚡ Applying Ring-Buffer Indexing, QoS 1 Acknowledgment & Custom Dispatchers...
+[09:41:04] I/GradleBuild:  BUILD SUCCESSFUL in 1.42s (0 errors, 0 warnings, -30% latency reduction)
+[09:41:05] V/AndroidStudio: Target Device connected: Pixel_8_Pro_API_34 [Surat, Gujarat]
+```
+
+<br>
+
+---
+
+### ⚖️ **THE CONTRAST: BUGS ENCOUNTERED VS. ENGINEERING SUCCESS BUILT**
+
+> *"Debugging is twice as hard as writing the code in the first place."* — **The Engineering Reality**
+
+| 🐛 **The Bug / Technical Challenge Faced** | 🛠️ **The Engineering Solution Implemented** | ✅ **Production Impact & Success** |
+| :--- | :--- | :--- |
+| **🐛 ANR & Thread Blockage on USB OTG FTDI Serial Disconnects** | Switched off main looper thread to **IO/Default Coroutine Dispatchers** with non-blocking stream channels. | **⚡ 0 App Crashes** & smooth 60fps UI responsiveness during hardware detach. |
+| **🐛 Data Packet Loss over Volatile Cellular MQTT Networks** | Implemented **MQTT QoS 1** delivery confirmations backed by an offline **Room SQLite Sync Buffer**. | **📈 +20% Client Satisfaction** & 100% telemetry data preservation. |
+| **🐛 Frame Drops during Real-time ML Kit Object Detection** | Bypassed bitmap allocation overhead by feeding **CameraX YUV_420_888 Direct Planes** to ML Kit inference engine. | **🍎 Smooth 60FPS Viewfinder** with instant macro calorie breakdown. |
+| **🐛 Monolithic Codebase & Slow Enterprise Reusability** | Abstracted hardware communication layer into a modular **Reusable Kotlin Library**. | **🚀 Adopted across 2 Enterprise Projects** reducing dev cycle by 40%. |
+
+<br>
+
+---
+
 ### 💻 **Developer Architecture Snapshot (`ShubhamSharma.kt`)**
 
 ```kotlin
@@ -45,17 +70,22 @@
  * @title Android Developer, AI/ML Developer & IoT Specialist
  * @location Surat, Gujarat, India
  */
-object ShubhamSharma : AndroidDeveloper() {
-    const val YEARS_EXPERIENCE = "2+ Years"
-    const val CURRENT_ROLE = "Application Software Developer @ Susamp Infotech"
-    const val PAST_ROLE = "Software Developer @ LeonsIntegrations Pvt. Ltd."
+class ShubhamSharma : AndroidDeveloper() {
+    val experience = "2+ Years Native Android (Kotlin)"
+    val currentRole = "Application Software Developer @ Susamp Infotech"
+    val pastRole = "Software Developer @ LeonsIntegrations Pvt. Ltd."
     
-    val coreStack = listOf("Kotlin", "Jetpack Compose", "Coroutines & Flow", "Room DB", "Clean Architecture")
-    val hardwareIoT = listOf("MQTT Telemetry (QoS 1)", "USB Serial FTDI", "OTA Firmware Flashing")
-    val aiVision = listOf("Google ML Kit (On-Device)", "Gemini API", "Nvidia Generative AI")
+    val languages = listOf("Kotlin", "Java", "Python", "C++")
+    val androidStack = listOf("Jetpack Compose", "ViewModel", "LiveData", "Room DB", "Coroutines", "CameraX")
+    val hardwareIoT = listOf("MQTT Telemetry (QoS 1)", "USB OTG Serial FTDI", "OTA Bootloader Flashing")
+    val aiEngine = listOf("Google ML Kit (On-Device)", "Gemini Generative AI API", "Nvidia AI API")
 
-    fun getImpactMetrics(): String {
-        return "Reduced processing latency by 30% & led 3 commercial IoT product apps!"
+    fun deployProductionApp(): BuildResult {
+        return BuildResult.SUCCESSFUL(
+            errors = 0,
+            warnings = 0,
+            impact = "+20% Client Rating & -30% Latency"
+        )
     }
 }
 ```
@@ -76,12 +106,12 @@ object ShubhamSharma : AndroidDeveloper() {
 
 ### 🛠️ **Tech Stack & Capabilities**
 
-| Domain | Technologies & Frameworks |
+| Domain | Technologies & Badges |
 | :--- | :--- |
 | **🤖 Native Android** | <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Jetpack_Compose-4285F4?style=flat-square&logo=jetpack-compose&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Coroutines-00C853?style=flat-square&logo=kotlin&logoColor=white"/> <img src="https://img.shields.io/badge/Room_DB-4285F4?style=flat-square&logo=sqlite&logoColor=white"/> |
-| **📡 IoT Telemetry** | <img src="https://img.shields.io/badge/MQTT_QoS_1-660066?style=flat-square&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/USB_OTG_Serial-FF6F00?style=flat-square&logo=usb&logoColor=white"/> <img src="https://img.shields.io/badge/OTA_Flashing-00C853?style=flat-square&logo=microchip&logoColor=white"/> <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white"/> |
-| **🧠 AI / Computer Vision** | <img src="https://img.shields.io/badge/Google_ML_Kit-FF6F00?style=flat-square&logo=google&logoColor=white"/> <img src="https://img.shields.io/badge/Gemini_AI-8E44AD?style=flat-square&logo=google-gemini&logoColor=white"/> <img src="https://img.shields.io/badge/CameraX_60FPS-00D2FF?style=flat-square&logo=android&logoColor=black"/> |
-| **🛠️ Tools & Monetization** | <img src="https://img.shields.io/badge/Android_Studio_2026-3DDC84?style=flat-square&logo=android-studio&logoColor=black"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/AdMob-EA4335?style=flat-square&logo=google-admob&logoColor=white"/> |
+| **📡 IoT & Hardware** | <img src="https://img.shields.io/badge/MQTT_QoS_1-660066?style=flat-square&logo=mqtt&logoColor=white"/> <img src="https://img.shields.io/badge/USB_OTG_Serial-FF6F00?style=flat-square&logo=usb&logoColor=white"/> <img src="https://img.shields.io/badge/OTA_Flashing-00C853?style=flat-square&logo=microchip&logoColor=white"/> <img src="https://img.shields.io/badge/WebSockets-010101?style=flat-square&logo=socketdotio&logoColor=white"/> |
+| **🧠 AI & Computer Vision** | <img src="https://img.shields.io/badge/Google_ML_Kit-FF6F00?style=flat-square&logo=google&logoColor=white"/> <img src="https://img.shields.io/badge/Gemini_AI-8E44AD?style=flat-square&logo=google-gemini&logoColor=white"/> <img src="https://img.shields.io/badge/CameraX_60FPS-00D2FF?style=flat-square&logo=android&logoColor=black"/> |
+| **🛠️ Tools & Release** | <img src="https://img.shields.io/badge/Android_Studio_2026-3DDC84?style=flat-square&logo=android-studio&logoColor=black"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/AdMob-EA4335?style=flat-square&logo=google-admob&logoColor=white"/> |
 
 <br>
 
