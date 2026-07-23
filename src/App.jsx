@@ -10,7 +10,6 @@ import { PhoneEmulatorPanel } from "./components/PhoneEmulatorPanel";
 import { BottomConsolePanel } from "./components/BottomConsolePanel";
 import { BackgroundGlassGlow } from "./components/BackgroundGlassGlow";
 import { FullWebsiteView } from "./components/FullWebsiteView";
-import { BrushHighlighterCanvas } from "./components/BrushHighlighterCanvas";
 
 export default function App() {
   // View mode state: "ide" | "web"
@@ -21,9 +20,6 @@ export default function App() {
 
   // Liquid Glass state
   const [glassEnabled, setGlassEnabled] = useState(true);
-
-  // Book Brush Highlighter state
-  const [isHighlighterActive, setIsHighlighterActive] = useState(false);
 
   // File Tabs state (landing Portfolio.kt is default tab #1!)
   const [openTabIds, setOpenTabIds] = useState(["landing", "about-me", "proj-dispenser", "contact"]);
@@ -59,73 +55,69 @@ export default function App() {
       setOpenTabIds((prev) => [...prev, fileId]);
     }
     setActiveFileId(fileId);
-
-    // If file has a mapped emulator app, switch emulator app!
-    const targetFile = fileStructure.find((f) => f.id === fileId);
-    if (targetFile && targetFile.emulatorId) {
-      setActiveEmulatorApp(targetFile.emulatorId);
-    }
+    setIsSidebarOpen(false);
   };
 
   // Close tab handler
-  const handleCloseTab = (fileId) => {
-    const nextTabs = openTabIds.filter((id) => id !== fileId);
-    setOpenTabIds(nextTabs);
+  const handleCloseTab = (e, fileId) => {
+    e.stopPropagation();
+    if (openTabIds.length === 1) return; // keep at least 1 tab open
+
+    const newOpenTabs = openTabIds.filter((id) => id !== fileId);
+    setOpenTabIds(newOpenTabs);
 
     if (activeFileId === fileId) {
-      if (nextTabs.length > 0) {
-        setActiveFileId(nextTabs[nextTabs.length - 1]);
-      } else {
-        setActiveFileId(null);
-      }
+      setActiveFileId(newOpenTabs[newOpenTabs.length - 1]);
     }
   };
 
-  // "Run ▶" action handler
-  const handleRunClick = () => {
+  // Launch app in AVD Phone Emulator handler
+  const handleLaunchInEmulator = (appId) => {
     setViewMode("ide");
-    // 1. Open Console to Build tab
+    setActiveEmulatorApp(appId);
+    setIsEmulatorOpen(true);
+
+    const appObj = fileStructure.find((f) => f.emulatorAppId === appId);
+    const appName = appObj ? appObj.name : "App";
+
+    setLaunchToast(`Launching ${appName} in Pixel AVD...`);
     setIsConsoleOpen(true);
     setActiveConsoleTab("build");
 
-    // 2. Open AVD Phone Emulator
-    setIsEmulatorOpen(true);
-
-    // 3. Trigger Toast notification
-    setLaunchToast(`Launching activity: com.shubham.${activeFileId}...`);
     setTimeout(() => {
       setLaunchToast("");
-    }, 3000);
+    }, 3500);
   };
 
-  // Launch specific app in emulator
-  const handleLaunchInEmulator = (appId) => {
+  // "Run" button handler
+  const handleRunClick = () => {
     setViewMode("ide");
     setIsEmulatorOpen(true);
-    setActiveEmulatorApp(appId);
-    setLaunchToast(`Launching activity in AVD: ${appId}...`);
-    setTimeout(() => {
-      setLaunchToast("");
-    }, 3000);
+    setIsConsoleOpen(true);
+    setActiveConsoleTab("build");
+
+    const appObj = fileStructure.find((f) => f.id === activeFileId);
+    if (appObj && appObj.emulatorAppId) {
+      setActiveEmulatorApp(appObj.emulatorAppId);
+    }
   };
 
-  // Terminal trigger for contact
+  // Trigger contact from console or buttons
   const handleTriggerContact = () => {
     handleSelectFile("contact");
   };
 
-  const currentCodeLines = activeFileId ? getKotlinCodeForFile(activeFileId) : null;
+  // Generate code lines for current active file
+  const currentCodeLines = getKotlinCodeForFile(activeFile.id, developerInfo);
 
   return (
-    <div className={`h-screen w-screen flex flex-col overflow-hidden relative select-none ${glassEnabled ? "glass-enabled" : ""}`}>
-      {/* Background Liquid Glass Glow */}
-      <BackgroundGlassGlow enabled={glassEnabled} />
-
-      {/* Book Highlighter & Reader Summary Tool Overlay */}
-      <BrushHighlighterCanvas
-        isActive={isHighlighterActive}
-        onToggleActive={() => setIsHighlighterActive(!isHighlighterActive)}
-      />
+    <div
+      className={`w-screen h-screen flex flex-col overflow-hidden font-sans text-xs bg-[var(--bg-primary)] text-[var(--text-main)] transition-colors duration-200 relative ${
+        glassEnabled ? "glass-root" : ""
+      }`}
+    >
+      {/* Background Liquid Glass Ambient Glows */}
+      {glassEnabled && <BackgroundGlassGlow />}
 
       {/* Top Android Studio Titlebar / Navbar */}
       <TopNavbar
@@ -143,8 +135,6 @@ export default function App() {
         onToggleConsole={() => setIsConsoleOpen(!isConsoleOpen)}
         viewMode={viewMode}
         onToggleViewMode={() => setViewMode(viewMode === "ide" ? "web" : "ide")}
-        isHighlighterActive={isHighlighterActive}
-        onToggleHighlighter={() => setIsHighlighterActive(!isHighlighterActive)}
       />
 
       {/* RENDER MODE SWITCH: Full Standalone Website Mode vs Android Studio IDE Mode */}

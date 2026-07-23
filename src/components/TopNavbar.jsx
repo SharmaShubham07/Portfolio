@@ -1,5 +1,5 @@
 import React from "react";
-import { Play, Smartphone, Sun, Moon, Sparkles, FolderTree, Terminal, Globe, Code2, Paintbrush } from "lucide-react";
+import { Play, Smartphone, Sun, Moon, Sparkles, FolderTree, Terminal, Globe, Code2 } from "lucide-react";
 import { AndroidBugdroidIcon } from "./icons/TechIcons";
 import { LiveClock } from "./LiveClock";
 import confetti from "canvas-confetti";
@@ -19,8 +19,6 @@ export function TopNavbar({
   onToggleConsole,
   viewMode,
   onToggleViewMode,
-  isHighlighterActive,
-  onToggleHighlighter,
 }) {
   const handleRun = () => {
     // Trigger confetti burst
@@ -87,20 +85,6 @@ export function TopNavbar({
 
       {/* Right section: Action Buttons & Controls */}
       <div className="flex items-center space-x-2 shrink-0">
-        {/* Book Brush Highlighter Button */}
-        <button
-          onClick={onToggleHighlighter}
-          className={`flex items-center space-x-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold transition-all cursor-pointer ${
-            isHighlighterActive
-              ? "bg-amber-400 text-slate-950 shadow-[0_0_12px_rgba(251,191,36,0.5)] scale-105"
-              : "bg-[var(--bg-tertiary)] hover:bg-[var(--border-color)] text-amber-300 border border-amber-400/30"
-          }`}
-          title="Highlight sections & create summary like reading a book"
-        >
-          <Paintbrush size={13} />
-          <span className="hidden sm:inline">Highlight Brush 🖌️</span>
-        </button>
-
         {/* Full Web Mode vs IDE Mode Toggle Button */}
         <button
           onClick={onToggleViewMode}
