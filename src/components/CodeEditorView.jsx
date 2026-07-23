@@ -42,6 +42,25 @@ export function CodeEditorView({
 
   return (
     <div className="flex-1 bg-[var(--bg-primary)] flex flex-col overflow-hidden font-mono text-xs relative selection:bg-[#3574F0]/40 selection:text-white select-none">
+      {/* ---------------- ONLY SHOW TOP TOOLBAR FOR ic_profile_avatar.xml ---------------- */}
+      {isProfileAvatarXml && (
+        <div className="h-8 border-b border-[var(--border-color)] bg-[var(--bg-secondary)] px-3 flex items-center justify-between text-[11px] shrink-0">
+          <div className="flex items-center space-x-2 text-[var(--text-muted)]">
+            <span className="font-bold text-[var(--text-main)]">{activeFile.name}</span>
+            <span className="text-[10px] px-2 py-0.2 rounded bg-[var(--bg-tertiary)] border border-[var(--border-color)] text-[#3DDC84]">
+              XML Vector & Photo Asset
+            </span>
+          </div>
+
+          <div className="flex items-center space-x-1 bg-[var(--bg-primary)] p-0.5 rounded-lg border border-[var(--border-color)]">
+            <div className="px-2.5 py-0.5 rounded bg-[#3574F0] text-white font-bold flex items-center space-x-1">
+              <Columns size={12} />
+              <span>Split Mode</span>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* ---------------- MAIN WORKSPACE AREA ---------------- */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Side: Code Editor Lines */}
